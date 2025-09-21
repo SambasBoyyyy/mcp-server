@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
-import { SSEServerTransport } from '@modelcontextprotocol/sdk/server/sse.js';
+import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import {
   CallToolRequestSchema,
   ListToolsRequestSchema,
@@ -202,14 +202,12 @@ class StockMCPServer {
   }
 
   async run() {
-    const port = process.env.PORT || 3000;
-    const transport = new SSEServerTransport('/message', this.server);
+    const transport = new StdioServerTransport();
     
     // Start the server
     await this.server.connect(transport);
     
-    console.log(`Stock MCP Server running on port ${port}`);
-    console.log(`Access at: http://localhost:${port}/message`);
+    console.log('Stock MCP Server running on stdio');
   }
 }
 
