@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "stock-market": {
+      "command": "node",
+      "args": ["C:\\Random Projects\\stock-mcp\\dist\\index.js"],
+      "env": {
+        "ALPHA_VANTAGE_API_KEY": "your_api_key_here"
+      }
+    }
+  }
+}
+
