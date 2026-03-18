@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "MCP Server for Stock Market Data",
   "main": "dist/index.js",
+  "bin": {
+    "dse-stock-mcp": "./dist/index.js"
+  },
   "type": "module",
   "scripts": {
     "build": "tsc",
@@ -15,25 +18,28 @@
     "watch": "tsx watch src/index.ts",
     "deploy": "npm run build && npm start"
   },
-  "keywords": ["mcp", "server", "stock", "market", "api"],
+  "keywords": [
+    "mcp",
+    "server",
+    "stock",
+    "market",
+    "api"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@modelcontextprotocol/sdk": "^1.27.1",
     "axios": "^1.7.7",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "cors": "^2.8.5"
+    "fastmcp": "^3.34.0"
   },
   "devDependencies": {
-    "@types/node": "^22.7.5",
-    "@types/express": "^4.17.21",
     "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.7.5",
     "tsx": "^4.19.1",
     "typescript": "^5.6.3"
   }
 }
-
-
-
-
